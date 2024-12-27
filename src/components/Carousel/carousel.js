@@ -69,6 +69,15 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Cambio realizado según la retroalimentación: manejo de caso cuando items está vacío.
+  if (!items || items.length === 0) {
+    return (
+      <CarouselContainer>
+        <p>No hay elementos para mostrar en el carrusel.</p>
+      </CarouselContainer>
+    );
+  }
+
   return (
     <CarouselContainer>
       {/* Flecha Izquierda */}
