@@ -1,6 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 import { theme } from '../../App/theme';
 
+interface ArrowProps {
+  direction: "left" | "right";
+}
+
 // Animaciones
 const fadeIn = keyframes`
   from {
@@ -11,7 +15,7 @@ const fadeIn = keyframes`
   }
 `;
 
-export const Arrow = styled.img`
+export const Arrow = styled.img<ArrowProps>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -136,7 +140,7 @@ export const CarouselIndicators = styled.div`
   gap: 5px;
 `;
 
-export const Indicator = styled.span`
+export const Indicator = styled.span<{ active: boolean }>`
   display: block;
   width: 10px;
   height: 10px;

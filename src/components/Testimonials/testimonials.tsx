@@ -15,12 +15,21 @@ import {
   AuthorTitle,
 } from "./styles";
 
-import avatar1 from "../../assets/avatar-1.png";
-import avatar2 from "../../assets/avatar-2.png";
-import avatar3 from "../../assets/avatar-3.png";
-import avatar4 from "../../assets/avatar-4.png";
+// Cambiar las importaciones por referencias directas
+const avatar1 = "/assets/avatar-1.png";
+const avatar2 = "/assets/avatar-2.png";
+const avatar3 = "/assets/avatar-3.png";
+const avatar4 = "/assets/avatar-4.png";
 
-const testimonials = [
+// Definir el tipo para los testimonios
+interface Testimonial {
+  text: string;
+  author: string;
+  title: string;
+  avatar: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     text: "El newsletter de CARAS se ha convertido en mi fuente diaria de información. Siempre recibo noticias relevantes.",
     author: "Sofía Ramírez",
@@ -47,7 +56,7 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials: React.FC = () => {
   return (
     <TestimonialsSection>
       <TestimonialsContainer>

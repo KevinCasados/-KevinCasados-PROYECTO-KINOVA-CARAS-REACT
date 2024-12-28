@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import backgroundImage from "../../assets/banner-background.svg";
+
+interface AlertBoxProps {
+  type: "success" | "error";
+  visible: boolean;
+}
 
 export const Wrapper = styled.section`
-  background-image: url(${backgroundImage});
+  background-image: url('/assets/banner-background.svg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -147,7 +151,7 @@ export const SubscribeButton = styled.button`
   }
 `;
 
-export const AlertBox = styled.div`
+export const AlertBox = styled.div<AlertBoxProps>`
   position: fixed;
   top: ${(props) => (props.visible ? "20px" : "-100px")}; /* Controla la posición */
   left: 50%;

@@ -1,7 +1,17 @@
 import styled from "styled-components";
 import { theme } from "../../App/theme";
 
-export const HeaderContainer = styled.header`
+// Tipos para las props del menú
+interface MenuProps {
+  isOpen: boolean;
+}
+
+// Definir las props para el componente
+interface HeaderProps {
+  isScrolled: boolean;
+}
+
+export const HeaderContainer = styled.div<HeaderProps>`
   position: fixed;
   top: 0;
   width: 100%;
@@ -55,7 +65,7 @@ export const Hamburger = styled.div`
   }
 `;
 
-export const MenuContainer = styled.div`
+export const MenuContainer = styled.div<MenuProps>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
   flex-direction: column;
   position: fixed;

@@ -11,34 +11,37 @@ import {
   SearchSection,
   SearchButton,
 } from "./styles";
-import logoCaras from "../../assets/Logo 2.png";
-import searchIcon from "../../assets/search-icon-black.svg";
 import MenuDropdown from "../Menu/MenuDropdown";
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú hamburguesa
+// Tipos para las props del menú
+interface HamburgerProps {
+  isMenuOpen: boolean;
+}
+
+// Constantes de imágenes
+const logoCaras = "/assets/Logo 2.png";
+const searchIcon = "/assets/search-icon-black.svg";
+
+const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   // Manejo del scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Función para alternar el menú hamburguesa
+  // Alternar el menú hamburguesa
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-   // Cerrar menú en resize
-   useEffect(() => {
+  // Cerrar menú al cambiar tamaño de ventana
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1094) setIsMenuOpen(false);
     };
@@ -53,18 +56,14 @@ const Header = () => {
           <Logo>
             <img src={logoCaras} alt="Logo CARAS" />
           </Logo>
-
-          {/* Botón del menú hamburguesa */}
           <Hamburger onClick={toggleMenu} isMenuOpen={isMenuOpen}>
             <span></span>
             <span></span>
             <span></span>
           </Hamburger>
-
-          {/* Menú */}
           <Menu isMenuOpen={isMenuOpen}>
             <NavList>
-              <NavItem className="active">
+              <NavItem>
                 <a href="#">Inicio</a>
               </NavItem>
               <NavItem>
