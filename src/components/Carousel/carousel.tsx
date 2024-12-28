@@ -14,25 +14,35 @@ import {
   CommentsIcon,
   CarouselIndicators,
   Indicator,
-} from './styles';
-import leftArrowIcon from '../../assets/left-arrow-icon.svg';
-import rightArrowIcon from '../../assets/right-arrow-icon.svg';
-import commentsIcon from '../../assets/comments-icon.svg';
-import img1 from '../../assets/carrousel-img-6.jpg';
-import img2 from '../../assets/carrousel-img-5.jpg';
-import img3 from '../../assets/carrousel-img-3.png';
+} from './styles.ts';
 
-const Carousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const items = [
+interface CarouselItem {
+  category: string;
+  title: string;
+  author: string;
+  date: string;
+  comments: number;
+  image: string;
+}
+
+interface ArrowProps {
+  direction: 'left' | 'right';
+}
+
+interface IndicatorProps {
+  active: boolean;
+}
+
+const Carousel: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const items: CarouselItem[] = [
     {
       category: 'FÍSICA',
-      title:
-        'Nuevo Descubrimiento en Física de Partículas Promete Desentrañar los Misterios del Universo',
+      title: 'Nuevo Descubrimiento en Física de Partículas Promete Desentrañar los Misterios del Universo',
       author: 'admin',
       date: 'junio 23, 2024',
       comments: 0,
-      image: img1,
+      image: '/assets/carrousel-img-6.jpg',
     },
     {
       category: 'TECNOLOGÍA',
@@ -40,7 +50,7 @@ const Carousel = () => {
       author: 'admin',
       date: 'junio 22, 2024',
       comments: 0,
-      image: img2,
+      image: '/assets/carrousel-img-5.jpg',
     },
     {
       category: 'IA Y ROBÓTICA',
@@ -48,7 +58,7 @@ const Carousel = () => {
       author: 'admin',
       date: 'junio 21, 2024',
       comments: 0,
-      image: img3,
+      image: '/assets/carrousel-img-3.png',
     },
   ];
 
@@ -60,7 +70,7 @@ const Carousel = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setActiveIndex(index);
   };
 
@@ -81,7 +91,7 @@ const Carousel = () => {
   return (
     <CarouselContainer>
       {/* Flecha Izquierda */}
-      <Arrow src={leftArrowIcon} alt="Flecha Izquierda" onClick={prevSlide} direction="left" />
+      <Arrow src="/assets/left-arrow-icon.svg" alt="Flecha Izquierda" onClick={prevSlide} direction="left" />
 
       {/* Contenedor de Items */}
       <CarouselItems>
@@ -98,7 +108,7 @@ const Carousel = () => {
                 <span>{item.author}</span>
                 <span>{item.date}</span>
                 <span>
-                  <CommentsIcon src={commentsIcon} alt="Comentarios" /> {item.comments}
+                  <CommentsIcon src="/assets/comments-icon.svg" alt="Comentarios" />
                 </span>
               </Info>
             </Content>
@@ -107,7 +117,7 @@ const Carousel = () => {
       </CarouselItems>
 
       {/* Flecha Derecha */}
-      <Arrow src={rightArrowIcon} alt="Flecha Derecha" onClick={nextSlide} direction="right" />
+      <Arrow src="/assets/right-arrow-icon.svg" alt="Flecha Derecha" onClick={nextSlide} direction="right" />
 
       {/* Indicadores */}
       <CarouselIndicators>

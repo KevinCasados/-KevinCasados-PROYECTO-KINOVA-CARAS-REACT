@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { theme } from "../../App/theme"; // Archivo de variables globales
 
+// Tipos para las props del menú
+interface MenuProps {
+  isMenuOpen: boolean;
+}
+
 export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
@@ -49,7 +54,7 @@ export const Logo = styled.div`
   }
 `;
 
-export const Hamburger = styled.div`
+export const Hamburger = styled.div<MenuProps>`
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -84,7 +89,7 @@ export const Hamburger = styled.div`
   }
 `;
 
-export const Menu = styled.div`
+export const Menu = styled.div<MenuProps>`
   display: flex;
   align-items: center;
   gap: 15px;
@@ -126,7 +131,7 @@ export const NavItem = styled.li`
     transition: color 0.3s, border-color 0.3s, transform 0.3s;
 
     &:hover {
-      color: ${theme.secondaryColorColor || "#ffff"};
+      color: ${theme.secondaryColor || "#ffff"};
       border-color: ${theme.primaryColor || "#ed1e1e"};
       transform: scale(1.05);
     }

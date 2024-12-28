@@ -12,20 +12,18 @@ import {
   ArticleDescription,
 } from './styles';
 
-// Importa las imágenes
-import img1 from '../../assets/news-img-1.jpg';
-import img2 from '../../assets/news-img-2.jpg';
-import img3 from '../../assets/news-img-3.jpg';
-import img4 from '../../assets/news-img-4.jpeg';
-import img5 from '../../assets/news-img-5.jpg';
-import img6 from '../../assets/news-img-6.png';
-import img7 from '../../assets/news-img-7.jpg';
-import img8 from '../../assets/news-img-8.jpg';
-import img9 from '../../assets/news-img-9.jpg';
+// Definir la interfaz para los artículos
+interface Article {
+  image: string;
+  date: string;
+  category: string;
+  title: string;
+  description: string;
+}
 
-const articles = [
+const articles: Article[] = [
   {
-    image: img1,
+    image: '/assets/news-img-1.jpg',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Innovador Microchip Promete Revolucionar la Computación',
@@ -33,7 +31,7 @@ const articles = [
       'Es un ritual diario para muchos investigadores en tecnología, pero si has notado la creciente expectativa en torno a la computación cuántica, prepárate...',
   },
   {
-    image: img2,
+    image: '/assets/news-img-2.jpg',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Innovador Sistema de Energía Solar Flotante Promete Transformar la Generación de Energía Renovable',
@@ -41,7 +39,7 @@ const articles = [
       'Un equipo de ingenieros de la Universidad de Stanford ha desarrollado un sistema de energía solar flotante que podría revolucionar la generación de energía...',
   },
   {
-    image: img3,
+    image: '/assets/news-img-3.jpg',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Avance Tecnológico Permite Desarrollar Red 6G para Comunicaciones Ultrarrápidas',
@@ -49,7 +47,7 @@ const articles = [
       'Un equipo de ingenieros del Instituto Tecnológico de California (Caltech) ha desarrollado una nueva tecnología que promete hacer realidad las redes 6G...',
   },
   {
-    image: img4,
+    image: '/assets/news-img-4.jpeg',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Avance Tecnológico Permite Desarrollar Baterías de Larga Duración y Carga Rápida',
@@ -57,7 +55,7 @@ const articles = [
       'Un equipo de ingenieros de la Universidad de Stanford ha desarrollado una nueva tecnología de baterías que promete transformar la industria de dispositivos electrónicos...',
   },
   {
-    image: img5,
+    image: '/assets/news-img-5.jpg',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Innovadora Tecnología de Inteligencia Artificial Mejora la Seguridad en Línea',
@@ -65,7 +63,7 @@ const articles = [
       'Un equipo de investigadores del Instituto Tecnológico de Massachusetts (MIT) ha desarrollado una nueva tecnología de inteligencia artificial (IA) que promete mejorar significativamente la...',
   },
   {
-    image: img6,
+    image: '/assets/news-img-6.png',
     date: '21 junio 2024',
     category: 'TECNOLOGÍA',
     title: 'Innovadora Tecnología de Hologramas 3D Revoluciona las Videoconferencias',
@@ -73,7 +71,7 @@ const articles = [
       'Investigadores de la Universidad de Oxford han desarrollado una tecnología de hologramas 3D que promete transformar la forma en que se realizan las videoconferencias...',
   },
   {
-    image: img7,
+    image: '/assets/news-img-7.jpg',
     date: '21 junio 2024',
     category: 'BIOLOGÍA',
     title: 'Avance en Genómica Revela Nuevas Pistas sobre la Evolución Humana',
@@ -81,7 +79,7 @@ const articles = [
       'Investigadores de la Universidad de Cambridge han hecho un descubrimiento significativo en el campo de la genómica que proporciona nuevas perspectivas sobre la evolución...',
   },
   {
-    image: img8,
+    image: '/assets/news-img-8.jpg',
     date: '21 junio 2024',
     category: 'BIOLOGÍA',
     title: 'Descubrimiento en Biología Celular Abre Nuevas Vías para el Tratamiento de Enfermedades Neurodegenerativas',
@@ -89,7 +87,7 @@ const articles = [
       'Un equipo de científicos de la Universidad de California, Berkeley, ha realizado un descubrimiento innovador en el campo de la biología celular que podría...',
   },
   {
-    image: img9,
+    image: '/assets/news-img-9.jpg',
     date: '21 junio 2024',
     category: 'BIOLOGÍA',
     title: 'Científicos Descubren Nueva Especie de Bacteria que Podría Ayudar a Combatir la Contaminación Plástica',
@@ -98,7 +96,7 @@ const articles = [
   },
 ];
 
-const FeaturedArticles = () => {
+const FeaturedArticles: React.FC = () => {
   return (
     <Section>
       <SectionTitle>Artículos destacados</SectionTitle>
