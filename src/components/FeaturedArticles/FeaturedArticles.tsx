@@ -96,7 +96,16 @@ const articles: Article[] = [
   },
 ];
 
+
 const FeaturedArticles: React.FC = () => {
+  if (!articles || articles.length === 0) {
+    return (
+      <Section>
+        <SectionTitle>Artículos destacados</SectionTitle>
+        <p>No hay artículos para mostrar.</p>
+      </Section>
+    );
+  }
   return (
     <Section>
       <SectionTitle>Artículos destacados</SectionTitle>

@@ -18,7 +18,7 @@ interface MenuDropdownProps {
 
 const MenuDropdown: React.FC<MenuDropdownProps> = ({ isOpen, onClose }) => {
   return (
-    <MenuContainer isOpen={isOpen}>
+    <MenuContainer role="menu" isOpen={isOpen}>
       <CloseButtonContainer>
         <MenuLogo src={logoCaras} alt="Logo CARAS" />
         <CloseButton onClick={onClose} aria-label="Cerrar menú">X</CloseButton>
