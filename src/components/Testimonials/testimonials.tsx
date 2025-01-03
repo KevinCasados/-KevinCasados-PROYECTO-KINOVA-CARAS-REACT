@@ -65,9 +65,9 @@ const Testimonials: React.FC = () => {
           Descubre cómo nuestro boletín informativo y nuestras noticias diarias han impactado a nuestra comunidad de lectores.
         </TestimonialsDescription>
         <TestimonialsWrapper>
-          <TestimonialsScroller>
+          <TestimonialsScroller role="list">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <TestimonialCard key={index}>
+              <TestimonialCard role="article" key={index}>
                 <TestimonialText>{testimonial.text}</TestimonialText>
                 <TestimonialAuthor>
                   <AuthorAvatar src={testimonial.avatar} alt={testimonial.author} />

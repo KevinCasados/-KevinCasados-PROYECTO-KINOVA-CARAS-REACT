@@ -140,7 +140,7 @@ export const CarouselIndicators = styled.div`
   gap: 5px;
 `;
 
-export const Indicator = styled.span<{ active: boolean }>`
+export const Indicator = styled.button<{ active: boolean }>`
   display: block;
   width: 10px;
   height: 10px;

@@ -56,7 +56,7 @@ const Header: React.FC = () => {
           <Logo>
             <img src={logoCaras} alt="Logo CARAS" />
           </Logo>
-          <Hamburger onClick={toggleMenu} isMenuOpen={isMenuOpen}>
+          <Hamburger role="button"  onClick={toggleMenu} isMenuOpen={isMenuOpen}>
             <span></span>
             <span></span>
             <span></span>

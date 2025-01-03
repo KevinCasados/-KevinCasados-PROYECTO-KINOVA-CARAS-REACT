@@ -122,7 +122,7 @@ const Carousel: React.FC = () => {
       {/* Indicadores */}
       <CarouselIndicators>
         {items.map((_, index) => (
-          <Indicator key={index} active={index === activeIndex} onClick={() => goToSlide(index)} />
+          <Indicator key={index} aria-label={`Indicador ${index + 1}`} active={index === activeIndex} onClick={() => goToSlide(index)} />
         ))}
       </CarouselIndicators>
     </CarouselContainer>
