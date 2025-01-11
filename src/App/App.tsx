@@ -11,9 +11,12 @@ const App: React.FC = () => {
       {/* Estilo global */}
       <GlobalStyle />
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        {/* Agregar role="main" para el contenido principal */}
+        <div role="main" id="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </Router>
     </ThemeProvider>
   );

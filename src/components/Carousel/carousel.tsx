@@ -25,14 +25,6 @@ interface CarouselItem {
   image: string;
 }
 
-interface ArrowProps {
-  direction: 'left' | 'right';
-}
-
-interface IndicatorProps {
-  active: boolean;
-}
-
 const Carousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const items: CarouselItem[] = [
@@ -79,7 +71,6 @@ const Carousel: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Cambio realizado según la retroalimentación: manejo de caso cuando items está vacío.
   if (!items || items.length === 0) {
     return (
       <CarouselContainer>
@@ -89,16 +80,34 @@ const Carousel: React.FC = () => {
   }
 
   return (
-    <CarouselContainer>
+    <CarouselContainer
+      role="region"
+      aria-label="Carrusel de noticias destacadas"
+    >
       {/* Flecha Izquierda */}
-      <Arrow src="/assets/left-arrow-icon.svg" alt="Flecha Izquierda" onClick={prevSlide} direction="left" />
+      <Arrow
+        src="/assets/left-arrow-icon.svg"
+        alt="Flecha para ver el elemento anterior"
+        onClick={prevSlide}
+        role="button"
+        aria-label="Anterior"
+        direction="left"
+      />
 
       {/* Contenedor de Items */}
-      <CarouselItems>
+      <CarouselItems aria-live="polite">
         {items.map((item, index) => (
-          <CarouselItem key={index} className={index === activeIndex ? 'active' : ''}>
+          <CarouselItem
+            key={index}
+            className={index === activeIndex ? "active" : ""}
+            role="group"
+            aria-label={`Noticia ${index + 1} de ${items.length}`}
+          >
             <ImageContainer>
-              <BackgroundImage src={item.image} alt={`Imagen de ${item.category}`} />
+              <BackgroundImage
+                src={item.image}
+                alt={`Imagen representativa de la categoría ${item.category}`}
+              />
               <Overlay />
             </ImageContainer>
             <Content>
@@ -108,7 +117,10 @@ const Carousel: React.FC = () => {
                 <span>{item.author}</span>
                 <span>{item.date}</span>
                 <span>
-                  <CommentsIcon src="/assets/comments-icon.svg" alt="Comentarios" />
+                  <CommentsIcon
+                    src="/assets/comments-icon.svg"
+                    alt="Icono de comentarios"
+                  />
                 </span>
               </Info>
             </Content>
@@ -117,12 +129,25 @@ const Carousel: React.FC = () => {
       </CarouselItems>
 
       {/* Flecha Derecha */}
-      <Arrow src="/assets/right-arrow-icon.svg" alt="Flecha Derecha" onClick={nextSlide} direction="right" />
+      <Arrow
+        src="/assets/right-arrow-icon.svg"
+        alt="Flecha para ver el siguiente elemento"
+        onClick={nextSlide}
+        role="button"
+        aria-label="Siguiente"
+        direction="right"
+      />
 
       {/* Indicadores */}
       <CarouselIndicators>
         {items.map((_, index) => (
-          <Indicator key={index} aria-label={`Indicador ${index + 1}`} active={index === activeIndex} onClick={() => goToSlide(index)} />
+          <Indicator
+            key={index}
+            active={index === activeIndex} // Proporcionar la propiedad `active`
+            aria-label={`Seleccionar noticia ${index + 1}`}
+            aria-current={index === activeIndex ? "true" : "false"}
+            onClick={() => goToSlide(index)}
+          />
         ))}
       </CarouselIndicators>
     </CarouselContainer>

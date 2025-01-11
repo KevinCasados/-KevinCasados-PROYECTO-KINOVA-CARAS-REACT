@@ -57,6 +57,11 @@ export const ArticleContent = styled.div`
   display: grid;
 `;
 
+export const ArticleData = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+`;
+
 export const ArticleDate = styled.span`
   font-size: 0.875rem;
   color: #666;

@@ -13,11 +13,6 @@ import {
 } from "./styles";
 import MenuDropdown from "../Menu/MenuDropdown";
 
-// Tipos para las props del menú
-interface HamburgerProps {
-  isMenuOpen: boolean;
-}
-
 // Constantes de imágenes
 const logoCaras = "/assets/Logo 2.png";
 const searchIcon = "/assets/search-icon-black.svg";
@@ -52,11 +47,17 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer className={isScrolled ? "scrolled" : "top"}>
       <Container>
-        <Navigation>
+        <Navigation role="navigation" aria-label="Menú principal">
           <Logo>
-            <img src={logoCaras} alt="Logo CARAS" />
+            <img src={logoCaras} alt="Logo de CARAS México" />
           </Logo>
-          <Hamburger role="button"  onClick={toggleMenu} isMenuOpen={isMenuOpen}>
+          <Hamburger
+            role="button"
+            aria-label="Abrir o cerrar menú"
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
+            isMenuOpen={isMenuOpen}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -64,28 +65,44 @@ const Header: React.FC = () => {
           <Menu isMenuOpen={isMenuOpen}>
             <NavList>
               <NavItem>
-                <a href="#">Inicio</a>
+                <a href="#" aria-label="Ir a la página de inicio">
+                  Inicio
+                </a>
               </NavItem>
               <NavItem>
-                <a href="#">Entretenimiento</a>
+                <a href="#" aria-label="Ir a la sección de entretenimiento">
+                  Entretenimiento
+                </a>
               </NavItem>
               <NavItem>
-                <a href="#">Realeza</a>
+                <a href="#" aria-label="Ir a la sección de realeza">
+                  Realeza
+                </a>
               </NavItem>
               <NavItem>
-                <a href="#">Moda</a>
+                <a href="#" aria-label="Ir a la sección de moda">
+                  Moda
+                </a>
               </NavItem>
               <NavItem>
-                <a href="#">Estilo de Vida</a>
+                <a href="#" aria-label="Ir a la sección de estilo de vida">
+                  Estilo de Vida
+                </a>
               </NavItem>
             </NavList>
             <SearchSection>
-              <SearchButton aria-label="Buscar">
-                <img src={searchIcon} alt="Icono de Buscar" />
+              <SearchButton
+                aria-label="Abrir barra de búsqueda"
+                role="button"
+              >
+                <img src={searchIcon} alt="Icono de búsqueda" />
               </SearchButton>
             </SearchSection>
           </Menu>
-          <MenuDropdown isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+          <MenuDropdown
+            isOpen={isMenuOpen}
+            onClose={() => setIsMenuOpen(false)}
+          />
         </Navigation>
       </Container>
     </HeaderContainer>
