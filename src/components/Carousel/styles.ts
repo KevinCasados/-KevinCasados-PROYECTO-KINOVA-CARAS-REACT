@@ -142,12 +142,13 @@ export const CarouselIndicators = styled.div`
 
 export const Indicator = styled.button<{ active: boolean }>`
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: ${(props) => (props.active ? theme.primaryColor : '#ccc')};
   cursor: pointer;
   transition: background-color 0.3s;
+  border-color: transparent;
 
   &:hover {
     background-color: ${theme.primaryColor};

@@ -21,4 +21,6 @@
         "**/*.js",
         "src/App/theme.ts"
     ],
+
+    "include": ["src/**/*", "src/**/*.test.tsx"],
 }

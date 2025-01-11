@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   MenuContainer,
   CloseButtonContainer,
@@ -17,27 +17,56 @@ interface MenuDropdownProps {
 }
 
 const MenuDropdown: React.FC<MenuDropdownProps> = ({ isOpen, onClose }) => {
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (isOpen && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [isOpen]);
+
   return (
-    <MenuContainer role="menu" isOpen={isOpen}>
+    <MenuContainer
+      role="menu"
+      aria-expanded={isOpen}
+      aria-hidden={!isOpen}
+      isOpen={isOpen}
+    >
       <CloseButtonContainer>
-        <MenuLogo src={logoCaras} alt="Logo CARAS" />
-        <CloseButton onClick={onClose} aria-label="Cerrar menú">X</CloseButton>
+        <MenuLogo src={logoCaras} alt="Logo de CARAS México" />
+        <CloseButton
+          ref={closeButtonRef}
+          onClick={onClose}
+          aria-label="Cerrar el menú desplegable"
+        >
+          X
+        </CloseButton>
       </CloseButtonContainer>
       <NavList>
         <NavItem>
-          <a href="#">Inicio</a>
+          <a href="#" role="menuitem" aria-label="Ir a la página de inicio">
+            Inicio
+          </a>
         </NavItem>
         <NavItem>
-          <a href="#">Entretenimiento</a>
+          <a href="#" role="menuitem" aria-label="Ir a la sección de entretenimiento">
+            Entretenimiento
+          </a>
         </NavItem>
         <NavItem>
-          <a href="#">Realeza</a>
+          <a href="#" role="menuitem" aria-label="Ir a la sección de realeza">
+            Realeza
+          </a>
         </NavItem>
         <NavItem>
-          <a href="#">Moda</a>
+          <a href="#" role="menuitem" aria-label="Ir a la sección de moda">
+            Moda
+          </a>
         </NavItem>
         <NavItem>
-          <a href="#">Estilo de Vida</a>
+          <a href="#" role="menuitem" aria-label="Ir a la sección de estilo de vida">
+            Estilo de Vida
+          </a>
         </NavItem>
       </NavList>
     </MenuContainer>

@@ -10,6 +10,7 @@ import {
   ArticleCategory,
   ArticleTitle,
   ArticleDescription,
+  ArticleData,
 } from './styles';
 
 // Definir la interfaz para los artículos
@@ -107,16 +108,21 @@ const FeaturedArticles: React.FC = () => {
     );
   }
   return (
-    <Section>
-      <SectionTitle>Artículos destacados</SectionTitle>
+    <Section aria-labelledby="featured-articles-title">
+      <SectionTitle id="featured-articles-title">Artículos destacados</SectionTitle>
       <ArticlesContainer>
         {articles.map((article, index) => (
-          <ArticleCard key={index}>
-            <ArticleImage src={article.image} alt={article.title} />
+          <ArticleCard key={index} role="article" aria-labelledby={`article-title-${index}`}>
+            <ArticleImage
+              src={article.image}
+              alt={`Imagen representativa del artículo: ${article.title}`}
+            />
             <ArticleContent>
-              <ArticleDate>{article.date}</ArticleDate>
-              <ArticleCategory>{article.category}</ArticleCategory>
-              <ArticleTitle>{article.title}</ArticleTitle>
+              <ArticleData>
+                <ArticleDate>{article.date}</ArticleDate>
+                <ArticleCategory>{article.category}</ArticleCategory>
+              </ArticleData>
+              <ArticleTitle id={`article-title-${index}`}>{article.title}</ArticleTitle>
               <ArticleDescription>{article.description}</ArticleDescription>
             </ArticleContent>
           </ArticleCard>

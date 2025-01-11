@@ -24,49 +24,57 @@ const Footer: React.FC = () => {
   return (
     <FooterWrapper
       role="contentinfo"
-      aria-label="Footer with links to store, support, and social media"
+      aria-label="Sección de pie de página con enlaces a tienda, soporte y redes sociales"
     >
       <FooterContainer>
         <FooterLeft>
-          <SubscribeSection role="region" aria-labelledby="subscribe-section-title">
+          <SubscribeSection
+            role="region"
+            aria-labelledby="subscribe-section-title"
+          >
             <h3 id="subscribe-section-title">CARAS</h3>
-            <p>
+            <p id="subscribe-description">
               Recibe las mejores noticias y novedades del mundo del entretenimiento directamente en tu correo.
             </p>
             <div>
               <input
                 type="email"
                 placeholder="Correo Electrónico"
-                aria-label="Email Address for newsletter subscription"
+                aria-label="Dirección de correo electrónico para suscripción al boletín"
+                aria-describedby="subscribe-description"
               />
-              <button aria-label="Sign up for newsletter">SUSCRÍBETE</button>
+              <button
+                aria-label="Suscribirse al boletín de noticias de CARAS"
+              >
+                SUSCRÍBETE
+              </button>
             </div>
             <SocialIcons>
-              <a href="#" aria-label="Visit our Facebook page">
+              <a href="#" aria-label="Visita nuestra página de Facebook">
                 <FaFacebookF />
               </a>
-              <a href="#" aria-label="Visit our Instagram page">
+              <a href="#" aria-label="Visita nuestra página de Instagram">
                 <FaInstagram />
               </a>
-              <a href="#" aria-label="Visit our YouTube channel">
+              <a href="#" aria-label="Visita nuestro canal de YouTube">
                 <FaYoutube />
               </a>
               <a
                 href="https://github.com/KevinCasados"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit our GitHub page"
+                aria-label="Visita nuestro repositorio de GitHub"
               >
                 <FaGithub />
               </a>
-              <a href="#" aria-label="Visit our Twitch page">
+              <a href="#" aria-label="Visita nuestra página de Twitch">
                 <FaTwitch />
               </a>
             </SocialIcons>
           </SubscribeSection>
         </FooterLeft>
 
-        <FooterRight role="navigation" aria-label="Footer navigation links">
+        <FooterRight role="navigation" aria-label="Enlaces de navegación del pie de página">
           <FooterColumn role="region" aria-labelledby="store-links">
             <FooterTitle id="store-links">Sobre CARAS</FooterTitle>
             <FooterLink href="#">Quiénes Somos</FooterLink>

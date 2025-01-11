@@ -58,19 +58,22 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   return (
-    <TestimonialsSection>
+    <TestimonialsSection aria-labelledby="testimonials-title">
       <TestimonialsContainer>
-        <TestimonialsTitle>Opiniones de nuestros lectores.</TestimonialsTitle>
+        <TestimonialsTitle id="testimonials-title">Opiniones de nuestros lectores</TestimonialsTitle>
         <TestimonialsDescription>
           Descubre cómo nuestro boletín informativo y nuestras noticias diarias han impactado a nuestra comunidad de lectores.
         </TestimonialsDescription>
         <TestimonialsWrapper>
-          <TestimonialsScroller role="list">
+          <TestimonialsScroller role="list" aria-label="Lista de testimonios">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <TestimonialCard role="article" key={index}>
-                <TestimonialText>{testimonial.text}</TestimonialText>
+              <TestimonialCard role="article" key={index} aria-labelledby={`testimonial-${index}`}>
+                <TestimonialText id={`testimonial-${index}`}>{testimonial.text}</TestimonialText>
                 <TestimonialAuthor>
-                  <AuthorAvatar src={testimonial.avatar} alt={testimonial.author} />
+                  <AuthorAvatar
+                    src={testimonial.avatar}
+                    alt={`Avatar de ${testimonial.author}, ${testimonial.title}`}
+                  />
                   <AuthorDetails>
                     <AuthorName>{testimonial.author}</AuthorName>
                     <AuthorTitle>{testimonial.title}</AuthorTitle>
