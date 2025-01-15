@@ -72,6 +72,7 @@ const Testimonials: React.FC = () => {
                 <TestimonialAuthor>
                   <AuthorAvatar
                     src={testimonial.avatar}
+                    loading='lazy'
                     alt={`Avatar de ${testimonial.author}, ${testimonial.title}`}
                   />
                   <AuthorDetails>
