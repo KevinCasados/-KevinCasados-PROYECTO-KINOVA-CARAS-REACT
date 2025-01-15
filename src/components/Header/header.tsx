@@ -14,7 +14,7 @@ import {
 import MenuDropdown from "../Menu/MenuDropdown";
 
 // Constantes de imágenes
-const logoCaras = "/assets/Logo 2.png";
+const logoCaras = "/assets/Logo 2.webp";
 const searchIcon = "/assets/search-icon-black.svg";
 
 const Header: React.FC = () => {

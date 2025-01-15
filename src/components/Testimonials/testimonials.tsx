@@ -16,10 +16,10 @@ import {
 } from "./styles";
 
 // Cambiar las importaciones por referencias directas
-const avatar1 = "/assets/avatar-1.png";
-const avatar2 = "/assets/avatar-2.png";
-const avatar3 = "/assets/avatar-3.png";
-const avatar4 = "/assets/avatar-4.png";
+const avatar1 = "/assets/avatar-1.webp";
+const avatar2 = "/assets/avatar-2.webp";
+const avatar3 = "/assets/avatar-3.webp";
+const avatar4 = "/assets/avatar-4.webp";
 
 // Definir el tipo para los testimonios
 interface Testimonial {

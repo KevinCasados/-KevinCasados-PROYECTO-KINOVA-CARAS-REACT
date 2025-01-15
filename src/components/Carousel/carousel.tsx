@@ -34,7 +34,7 @@ const Carousel: React.FC = () => {
       author: 'admin',
       date: 'junio 23, 2024',
       comments: 0,
-      image: '/assets/carrousel-img-6.jpg',
+      image: '/assets/carrousel-img-6.webp',
     },
     {
       category: 'TECNOLOGÍA',
@@ -42,7 +42,7 @@ const Carousel: React.FC = () => {
       author: 'admin',
       date: 'junio 22, 2024',
       comments: 0,
-      image: '/assets/carrousel-img-5.jpg',
+      image: '/assets/carrousel-img-5.webp',
     },
     {
       category: 'IA Y ROBÓTICA',
@@ -50,7 +50,7 @@ const Carousel: React.FC = () => {
       author: 'admin',
       date: 'junio 21, 2024',
       comments: 0,
-      image: '/assets/carrousel-img-3.png',
+      image: '/assets/carrousel-img-3.webp',
     },
   ];
 
