@@ -103,14 +103,19 @@ export const InputRow = styled.div`
 
 export const InputField = styled.input`
   width: 16.465vw;
-  background-color: #ffffff;
+  background-color: #000000c9;
   border: 1px solid #b6b2b2;
   height: 2.083vw;
   border-radius: 30px;
   padding: 3px 25px;
   font-weight: 300;
-  color: #7b7b7b;
+  color: #ffff;
   font-size: 0.833vw;
+
+  &::placeholder {
+    color: #ffffff; /* Color blanco */
+    opacity: 0.8; /* Opcional: ajusta la opacidad */
+  }
 
   @media (max-width: 1144px) {
     width: 29.465vw;
@@ -131,7 +136,7 @@ export const InputField = styled.input`
 
 export const SubscribeButton = styled.button`
   padding: 10px 20px;
-  background-color: #ed1e1e;
+  background-color: #b71414;
   color: #ffffff;
   border: 2px solid transparent;
   border-radius: 5px;

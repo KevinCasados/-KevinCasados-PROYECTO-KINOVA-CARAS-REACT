@@ -70,7 +70,7 @@ export const ArticleDate = styled.span`
 export const ArticleCategory = styled.span`
   font-size: 0.875rem;
   font-weight: bold;
-  color: ${theme.primaryColor};
+  color: #b71414;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 `;

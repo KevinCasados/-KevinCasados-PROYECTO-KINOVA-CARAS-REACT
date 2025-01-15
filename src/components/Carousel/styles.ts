@@ -97,7 +97,7 @@ export const Content = styled.div`
 `;
 
 export const CategoryLabel = styled.div`
-  background-color: ${theme.primaryColor};
+  background-color: #b71414;
   color: ${theme.secondaryColor};
   display: inline-block;
   padding: 5px 10px;
@@ -137,18 +137,18 @@ export const CarouselIndicators = styled.div`
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 5px;
+  gap: 15px;
 `;
 
 export const Indicator = styled.button<{ active: boolean }>`
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: ${(props) => (props.active ? theme.primaryColor : '#ccc')};
   cursor: pointer;
   transition: background-color 0.3s;
-  border-color: transparent;
+
 
   &:hover {
     background-color: ${theme.primaryColor};

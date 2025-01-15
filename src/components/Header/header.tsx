@@ -47,7 +47,7 @@ const Header: React.FC = () => {
   return (
     <HeaderContainer className={isScrolled ? "scrolled" : "top"}>
       <Container>
-        <Navigation role="navigation" aria-label="Menú principal">
+        <Navigation aria-label="Menú principal">
           <Logo>
             <img src={logoCaras} alt="Logo de CARAS México" />
           </Logo>

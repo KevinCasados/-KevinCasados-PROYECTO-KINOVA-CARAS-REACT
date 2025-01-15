@@ -30,7 +30,7 @@ export const Container = styled.section`
   margin: 0 auto;
 `;
 
-export const Navigation = styled.article`
+export const Navigation = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
