@@ -115,6 +115,7 @@ const FeaturedArticles: React.FC = () => {
           <ArticleCard key={index} role="article" aria-labelledby={`article-title-${index}`}>
             <ArticleImage
               src={article.image}
+              loading='lazy'
               alt={`Imagen representativa del artículo: ${article.title}`}
             />
             <ArticleContent>
