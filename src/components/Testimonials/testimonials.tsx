@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
         <TestimonialsWrapper>
           <TestimonialsScroller role="list" aria-label="Lista de testimonios">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <TestimonialCard role="article" key={index} aria-labelledby={`testimonial-${index}`}>
+              <TestimonialCard role="listitem" key={index} aria-labelledby={`testimonial-${index}`}>
                 <TestimonialText id={`testimonial-${index}`}>{testimonial.text}</TestimonialText>
                 <TestimonialAuthor>
                   <AuthorAvatar

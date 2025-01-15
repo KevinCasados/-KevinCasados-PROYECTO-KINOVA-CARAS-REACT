@@ -39,13 +39,13 @@ export const TestimonialsWrapper = styled.div`
   -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 `;
 
-export const TestimonialsScroller = styled.div`
+export const TestimonialsScroller = styled.li`
   display: flex;
   gap: 20px;
   animation: ${scrollHorizontal} 30s linear infinite;
 `;
 
-export const TestimonialCard = styled.div`
+export const TestimonialCard = styled.article`
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 20px;
   border-radius: 10px;

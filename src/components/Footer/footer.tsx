@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
             role="region"
             aria-labelledby="subscribe-section-title"
           >
-            <h3 id="subscribe-section-title">CARAS</h3>
+            <h1 id="subscribe-section-title">CARAS</h1>
             <p id="subscribe-description">
               Recibe las mejores noticias y novedades del mundo del entretenimiento directamente en tu correo.
             </p>

@@ -136,7 +136,7 @@ export const SubscribeSection = styled.div`
 
   button {
     padding: 10px 20px;
-    background-color: #ed1e1e;
+    background-color: #b71414;
     color: #fff;
     border: 2px solid transparent;
     border-radius: 5px;
