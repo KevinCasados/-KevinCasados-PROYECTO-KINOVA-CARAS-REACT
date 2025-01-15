@@ -106,6 +106,7 @@ const Carousel: React.FC = () => {
             <ImageContainer>
               <BackgroundImage
                 src={item.image}
+                rel="preload"
                 alt={`Imagen representativa de la categoría ${item.category}`}
               />
               <Overlay />
