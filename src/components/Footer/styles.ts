@@ -55,7 +55,7 @@ export const FooterColumn = styled.div`
   
 `;
 
-export const FooterTitle = styled.h3`
+export const FooterTitle = styled.h2`
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 20px;
