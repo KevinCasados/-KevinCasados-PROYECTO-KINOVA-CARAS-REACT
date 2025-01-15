@@ -118,7 +118,7 @@ const Form: React.FC = () => {
             </NewsLetter>
           </BannerDesc>
           <BannerImg>
-            <Img src="/assets/banner-img.png" alt="Imagen representativa del boletín CARAS" />
+            <Img src="/assets/banner-img.webp" alt="Imagen representativa del boletín CARAS" />
           </BannerImg>
         </BannerRow>
       </Container>
